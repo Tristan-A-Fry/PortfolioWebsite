@@ -1,0 +1,32 @@
+    <nav>
+      <button (click)="scrollTo('home')">Home</button>
+      <button (click)="scrollTo('about')">About Me</button>
+      <button (click)="scrollTo('education')">Education</button>
+      <button (click)="scrollTo('projects')">Projects</button>
+    </nav>
+
+<div id="home" class="home-section video-background">
+  <video autoplay muted loop class="background-video">
+    <source src="assets/shootingstars.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="content">
+    <h2>{{sectionData.homeSection.title}}</h2>
+    <p>{{sectionData.homeSection.content}}</p>
+  </div>
+</div>
+
+<div id ="about" class="about-section">
+    <h2>{{sectionData.aboutSectoin.title}}</h2>
+    <p>{{sectionData.aboutSectoin.content}}</p>
+</div>
+
+<div id="education" class="education-section">
+    <h2>{{sectionData.educationSection.title}}</h2>
+    <p>{{sectionData.educationSection.content}}</p>
+</div>
+
+<div id="projects" class="projects-section">
+    <h2>{{sectionData.projectsSection.title}}</h2>
+    <p>{{sectionData.projectsSection.content}}</p>
+</div>
