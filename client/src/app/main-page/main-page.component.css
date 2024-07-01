@@ -46,10 +46,11 @@ body {
 }
 
 .home-section .content {
-  position: relative;
-  z-index: 10; /* Ensures text appears above the video */
-  color: white; /* Adjust color for visibility against the video */
-  padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 10; /* Ensures text appears above the video */
+    color: white; /* Adjust color for visibility against the video */
+    padding: 20px;
 }
 
 /* Responsive adjustments */
