@@ -74,17 +74,9 @@ body {
   background-color: #fff; /* White background for a card-like appearance */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   margin-right: 20px; /* Space between the text and the images */
-}
-
-/* Styling for the images part of the about section */
-.about-images {
-  flex: 1; /* Takes up remaining space in the flex container */
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centers the images vertically and horizontally */
-  align-items: center;
-  flex-wrap: wrap; /* Allows multiple images to wrap within the container */
-  margin-left: 150px;
+  max-width: 100%; /* Ensures the card does not exceed the container width */
+  min-width: 300px; /* Minimum width to prevent the card from getting too small */
+  overflow: auto; /* Adds a scrollbar if content overflows */
 }
 
 /* Specific styles for images within the about images container */
@@ -97,21 +89,114 @@ body {
   border-radius: 10px; /* Rounds the corners of the images */
   background-color: #fff; /* White background to blend with the card styling */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for a 3D effect */
-  margin-right: 20px; /* Right margin for spacing between images or edge of container */
+  margin: 10px; /* Margin for spacing between images or edge of container */
+}
+
+/* Ensure images are responsive */
+.about-images {
+  flex: 1; /* Takes up remaining space in the flex container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers the images vertically and horizontally */
+  align-items: center;
+  flex-wrap: wrap; /* Allows multiple images to wrap within the container */
   margin-left: 150px;
 }
 
-/* Responsive adjustments for smaller screens */
+/* Media queries for responsive design */
 @media (max-width: 768px) {
   .about-section {
-    flex-direction: column; /* Stack sections vertically on small screens */
-    padding: 50px; /* Reduced padding for smaller screens */
+    flex-direction: column; /* Stack the text and images vertically on smaller screens */
+    padding: 50px; /* Adjust padding for smaller screens */
+    height: auto; /* Allow height to adjust based on content */
   }
-  .about-content, .about-images {
-    margin-right: 0; /* Removes the right margin on smaller screens */
-    margin-bottom: 20px; /* Adds bottom margin for spacing between stacked items */
+
+  .about-content {
+    margin-right: 0; /* Remove right margin for smaller screens */
+    max-width: 100%; /* Ensure the card does not exceed the container width */
+    min-width: 100%; /* Ensure the card takes the full width of the container */
+    overflow: auto; /* Adds a scrollbar if content overflows */
   }
+
+  .about-images {
+    margin-left: 0; /* Remove left margin for smaller screens */
+  }
+
   .about-images img {
-    height: auto; /* Reverts to auto height for better aspect ratio control on small screens */
+    height: auto; /* Adjust height for smaller screens */
+    width: 100%; /* Ensure images take the full width of the container */
+    margin: 10px 0; /* Margin for spacing between images */
   }
 }
+
+/* Adjust font size for smaller screens */
+@media (max-width: 480px) {
+  .about-title {
+    font-size: 24px; /* Smaller font size for the title */
+  }
+
+  .about-text {
+    font-size: 16px; /* Smaller font size for the text */
+  }
+}
+
+
+/* General grid styling */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column layout by default */
+  gap: 20px; /* Space between grid items */
+  padding: 100px;
+  background-color: #f9f9f9; /* Light background color for the section */
+}
+
+.grid-item {
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #e0e0e0; /* Border for each grid item */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Responsive design for larger screens */
+@media (min-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr 1fr; /* Two columns layout */
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-grid {
+    grid-template-columns: 1fr 1fr 1fr; /* Three columns layout */
+  }
+}
+
+/* Styling for the section titles */
+.grid-item h2 {
+  font-size: 24px;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
+  margin: 0 0 10px 0; /* Adds space below the title */
+  padding: 0;
+  border-bottom: 3px solid #e76f51; /* Adds a bottom border similar to the example */
+}
+
+/* Section-specific styling */
+.education-details, .work-details, .technologies-details {
+  font-size: 20px;
+  font-family: sans-serif;
+  color: rgb(0, 0, 0);
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes padding */
+}
+
+@media (max-width: 768px) {
+  .education-title, .work-title, .technologies-title {
+    text-align: center; /* Center align titles on smaller screens */
+  }
+
+  .education-details, .work-details, .technologies-details {
+    text-align: left; /* Align text to the left */
+  }
+}
+
+

@@ -32,7 +32,6 @@ export class MainPageComponent {
     },
     educationSection:{
       title: 'Education',
-      content:'smart af yo'
     },
     projectsSection:{
       title: 'Projects',
