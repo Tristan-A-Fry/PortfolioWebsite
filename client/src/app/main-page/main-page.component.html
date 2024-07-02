@@ -1,24 +1,36 @@
-    <nav>
-      <button (click)="scrollTo('home')">Home</button>
-      <button (click)="scrollTo('about')">About Me</button>
-      <button (click)="scrollTo('education')">Education</button>
-      <button (click)="scrollTo('projects')">Projects</button>
-    </nav>
+<nav>
+  <button (click)="scrollTo('home')">Home</button>
+  <button (click)="scrollTo('about')">About Me</button>
+  <button (click)="scrollTo('education')">Education</button>
+  <button (click)="scrollTo('projects')">Projects</button>
+</nav>
 
-<div id="home" class="home-section video-background">
-  <video autoplay muted loop="auto" class="background-video">
-    <source src="assets/shootingstars.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <div class="content">
-    <h2>{{sectionData.homeSection.title}}</h2>
-    <p>{{sectionData.homeSection.content}}</p>
-  </div>
+<div id="home" class="home-section">
+  <app-decrypt-text [text]="homeText" [revealSpeed]="100"></app-decrypt-text>
 </div>
 
-<div id ="about" class="about-section">
-    <h2>{{sectionData.aboutSectoin.title}}</h2>
-    <p>{{sectionData.aboutSectoin.content}}</p>
+
+<div id="about" class="about-section">
+  <div class="about-content">
+    <div class="about-title">
+      <h2>{{sectionData.aboutSection.title}}</h2>
+    </div>
+    <div class="about-text">
+      <p>
+       I am currently in my final semester of school, eagerly working towards completing my degree. As a passionate student, I am dedicated to learning and improving as much as I can in the field of software engineering. 
+       My goal is to constantly enhance my skills and stay up-to-date with the latest advancements in technology.<br><br>
+
+       Outside of academics, I have a deep love for Formula 1 racing, which fuels my excitement for innovation and precision. 
+       I am also an avid gamer, enjoying the thrill and challenge of various gaming genres. 
+       Additionally, I cherish spending time outdoors, embracing nature, and seeking adventure in the great outdoors.<br><br>
+
+      Whether it’s coding, racing, gaming, or exploring nature, I am driven by a relentless curiosity and a desire to excel in everything I do.<br> 
+      </p>
+    </div>
+  </div>
+  <div class="about-images">
+    <img src="assets/profile-picture2.jpg" alt="Tristan Fry">
+  </div>
 </div>
 
 <div id="education" class="education-section">

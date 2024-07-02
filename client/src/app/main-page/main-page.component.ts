@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink, NavigationEnd, Event as NavigationEvent, RouterModule} from '@angular/router';
-
+import { InteractiveBackgroundComponent } from '../interactive-background/interactive-background.component';
+import { DecryptTextComponent } from '../decrypt-text/decrypt-text.component';
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [RouterLink, RouterModule],
+  imports: [RouterLink, RouterModule, InteractiveBackgroundComponent, DecryptTextComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css'
 })
@@ -24,12 +25,10 @@ export class MainPageComponent {
 
   sectionData ={
     homeSection:{
-      title: 'Home Section',
-      content: 'skdhfkjlsdhfjksdhfjklhsdkjhfklsjdfklsdhfjkhsfklsdlkfhskdhf'
+      name: "Tristan",
     },
-    aboutSectoin:{
+    aboutSection:{
       title: 'About Me',
-      content:'250 powerhouse'
     },
     educationSection:{
       title: 'Education',
@@ -40,4 +39,9 @@ export class MainPageComponent {
       content: 'Very good projects, now hire me'
     },
   };
+  homeText: string = '';
+  ngOnInit(): void
+  {
+    this.homeText = `Hello, I'm <span class='name'>${this.sectionData.homeSection.name}</span>.<br>I am an aspiring full-stack developer.`;
+  }
 }

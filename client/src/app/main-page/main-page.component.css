@@ -1,16 +1,26 @@
+
+@font-face{
+  font-family: 'Spacex';
+  src: url('/assets/fonts/SpaceX.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 nav {
   position: fixed;
   top: 0;
   left: 0;
+  height: 60px;
   width: 100%;
-  background-color: #007bff; /* Adjust the color as needed */
+  background-color: #000000; /* Adjust the color as needed */
   z-index: 1000; /* Ensures the nav is above other content */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: adds shadow for better visibility */
 }
 
 nav button {
+  font-size: 18px;
   padding: 0px 5px;
-  margin: 5px;
+  margin: 20px;
   cursor: pointer;
   background-color: transparent;
   color: white;
@@ -19,51 +29,89 @@ nav button {
 }
 
 nav button:hover {
-  background-color: #0056b3;
+  background-color: #ff0651;
 }
 
 body {
   padding-top: 30px; /* Add padding to ensure body content does not hide behind the fixed navbar */
 }
 
-/* .home-section{
-    background-color: rgba(0, 0, 0, 0.123);
-} */
-.video-background {
-  position: relative;
-  overflow: hidden;
-  height: 500px; /* Adjust based on your needs */
+.home-section{
+  background-image: url('/assets/bg-5.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 10;
 }
 
-.background-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: auto;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  z-index: -1; /* Keeps the video behind other content */
+/* rall container for the about section, which includes text and images */
+.about-section {
+  display: flex;
+  align-items: stretch; /* Ensure children stretch to fill the container vertically */
+  padding: 150px; /* Spacious padding around the entire section */
+  height: 60vh;
 }
 
-.home-section .content {
-    text-align: center;
-    position: relative;
-    z-index: 10; /* Ensures text appears above the video */
-    color: white; /* Adjust color for visibility against the video */
-    padding: 20px;
+.about-title{
+  font-size: 32px;
+  font-family: sans-serif;
+  /* z-index: 10; */
+  color: rgb(0, 0, 0); /* Choose a color that makes the text visible over the canvas */
+  text-align: center;
+  padding-top: 5px;
+}
+.about-text{
+  font-size: 20px;
+  font-family: sans-serif;
 }
 
-/* Responsive adjustments */
-@media (min-aspect-ratio: 16/9) {
-  .background-video {
-    width: 100%;
-    height: auto;
+/* Styling for the content part of the about section */
+.about-content {
+  flex: 1; /* Takes up only the needed space based on its content */
+  display: flex;
+  flex-direction: column; /* Aligns children (title and paragraph) vertically */
+  padding: 20px;
+  background-color: #fff; /* White background for a card-like appearance */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-right: 20px; /* Space between the text and the images */
+}
+
+/* Styling for the images part of the about section */
+.about-images {
+  flex: 1; /* Takes up remaining space in the flex container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers the images vertically and horizontally */
+  align-items: center;
+  flex-wrap: wrap; /* Allows multiple images to wrap within the container */
+  margin-left: 150px;
+}
+
+/* Specific styles for images within the about images container */
+.about-images img {
+  width: auto; /* Maintains the aspect ratio */
+  height: 100%; /* Full height of its parent container */
+  max-width: 100%; /* Prevents the image from exceeding the container's width */
+  object-fit: cover; /* Ensures the image covers the area without distorting aspect ratios */
+  padding: 5px;
+  border-radius: 10px; /* Rounds the corners of the images */
+  background-color: #fff; /* White background to blend with the card styling */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for a 3D effect */
+  margin-right: 20px; /* Right margin for spacing between images or edge of container */
+  margin-left: 150px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column; /* Stack sections vertically on small screens */
+    padding: 50px; /* Reduced padding for smaller screens */
   }
-}
-
-@media (max-aspect-ratio: 16/9) {
-  .background-video {
-    width: auto;
-    height: 100%;
+  .about-content, .about-images {
+    margin-right: 0; /* Removes the right margin on smaller screens */
+    margin-bottom: 20px; /* Adds bottom margin for spacing between stacked items */
+  }
+  .about-images img {
+    height: auto; /* Reverts to auto height for better aspect ratio control on small screens */
   }
 }

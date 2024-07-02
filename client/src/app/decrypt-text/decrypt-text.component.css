@@ -1,0 +1,11 @@
+.decrypt-container {
+  font-size: 52px;
+  font-family: 'SpaceX', sans-serif; /* Ensure consistency with the main component styles */
+  color: white; /* White color for visibility */
+  text-align: center;
+  position: relative;
+  padding-top: 100px; /* Adjust padding to position the text vertically */
+}
+
+
+
