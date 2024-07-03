@@ -6,6 +6,13 @@
   font-style: normal;
 }
 
+@font-face{
+  font-family: 'Monsterrat';
+  src: url('/assets/fonts/Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 nav {
   position: fixed;
   top: 0;
@@ -18,6 +25,7 @@ nav {
 }
 
 nav button {
+  font-family: 'Monsterrat';
   font-size: 18px;
   padding: 0px 5px;
   margin: 20px;
@@ -36,11 +44,22 @@ body {
   padding-top: 30px; /* Add padding to ensure body content does not hide behind the fixed navbar */
 }
 
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 4s forwards;
+}
+
+@keyframes fadeInAnimation {
+  to {
+    opacity: 1;
+  }
+}
+
 .home-section{
-  background-image: url('/assets/bg-5.jpg');
+  /* background-image: url('/assets/bg-5.jpg');
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
   z-index: 10;
 }
 
@@ -54,7 +73,7 @@ body {
 
 .about-title{
   font-size: 32px;
-  font-family: sans-serif;
+  font-family: 'Monsterrat';
   /* z-index: 10; */
   color: rgb(0, 0, 0); /* Choose a color that makes the text visible over the canvas */
   text-align: center;
@@ -62,7 +81,7 @@ body {
 }
 .about-text{
   font-size: 20px;
-  font-family: sans-serif;
+  font-family: 'Monsterrat';
 }
 
 /* Styling for the content part of the about section */
@@ -173,7 +192,7 @@ body {
 /* Styling for the section titles */
 .grid-item h2 {
   font-size: 24px;
-  font-family: sans-serif;
+  font-family: 'Monsterrat';
   color: rgb(0, 0, 0);
   margin: 0 0 10px 0; /* Adds space below the title */
   padding: 0;

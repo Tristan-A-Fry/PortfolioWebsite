@@ -26,6 +26,11 @@ html, body {
     padding: 20px;
 }
 
+.contact-section{
+  height: 100vh;
+  padding: 20px;
+}
+
 /*This is the name "Tristan" from the home-sction*/
 .name {
   color: #ff0651; /* Color for the highlighted name */

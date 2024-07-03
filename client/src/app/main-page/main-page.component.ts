@@ -2,12 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RouterLink, NavigationEnd, Event as NavigationEvent, RouterModule} from '@angular/router';
 import { InteractiveBackgroundComponent } from '../interactive-background/interactive-background.component';
 import { DecryptTextComponent } from '../decrypt-text/decrypt-text.component';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 @Component({
   selector: 'app-main-page',
   standalone: true,
   imports: [RouterLink, RouterModule, InteractiveBackgroundComponent, DecryptTextComponent],
   templateUrl: './main-page.component.html',
-  styleUrl: './main-page.component.css'
+  styleUrl: './main-page.component.css',
+  animations: [
+    trigger('fadeIn', [
+      state('void', style({
+        opacity: 0
+      })),
+      transition('void => *', [
+        animate('2s')
+      ])
+    ])
+  ]
 })
 export class MainPageComponent {
   constructor(private router: Router) {

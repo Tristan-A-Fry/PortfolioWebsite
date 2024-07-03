@@ -1,7 +1,7 @@
 .decrypt-container {
   font-size: 52px;
-  font-family: 'SpaceX', sans-serif; /* Ensure consistency with the main component styles */
-  color: white; /* White color for visibility */
+  font-family: 'Monsterrat', sans-serif; /* Ensure consistency with the main component styles */
+  color: black; /* White color for visibility */
   text-align: center;
   position: relative;
   padding-top: 100px; /* Adjust padding to position the text vertically */
@@ -22,3 +22,18 @@
 }
 
 
+.decrypt-container button{
+  font-family: 'Monsterrat';
+}
+
+
+.fade-in {
+  opacity: 0;
+  animation: fadeInAnimation 4s forwards;
+}
+
+@keyframes fadeInAnimation {
+  to {
+    opacity: 1;
+  }
+}

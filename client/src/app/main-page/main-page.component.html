@@ -3,10 +3,11 @@
   <button (click)="scrollTo('about')">About Me</button>
   <button (click)="scrollTo('education')">Education</button>
   <button (click)="scrollTo('projects')">Projects</button>
+  <button (click)="scrollTo('contact')">Contact</button>
 </nav>
 
 <div id="home" class="home-section">
-  <app-decrypt-text [text]="homeText" [revealSpeed]="100"></app-decrypt-text>
+    <app-decrypt-text [text]="homeText" [revealSpeed]="100"></app-decrypt-text>
 </div>
 
 
@@ -89,4 +90,9 @@
 <div id="projects" class="projects-section">
     <h2>{{sectionData.projectsSection.title}}</h2>
     <p>{{sectionData.projectsSection.content}}</p>
+</div>
+
+
+<div id="contact" class="contact-section">
+    <h2>Contact Me:</h2>
 </div>
